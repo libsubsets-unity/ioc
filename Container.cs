@@ -1,6 +1,6 @@
 ﻿using libunity.ioc;
 
-class Service_Locator {
+class Container {
   public static void register(object o) {
     depend.register(o);
   }

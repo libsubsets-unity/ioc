@@ -3,9 +3,7 @@ using libunity.ioc;
 
 public class Foo : MonoBehaviour {
   public void Awake() {
-    //dependencies.instance.injection(this);
-    //dependencies.instance.injection<Logger>(this);
-    Service_Locator.injection(this);
+    Service_Dependency.injection(this);
   }
 
   void Update () {
@@ -13,7 +11,6 @@ public class Foo : MonoBehaviour {
       logger.debug("Update");
   }
 
-  //[dependency_attribute]
-  [Service]
+  [Inject]
   private Logger logger = null;
 }

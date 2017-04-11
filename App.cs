@@ -7,8 +7,7 @@ public class App : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
     Logger logger = new GameObject("logger").AddComponent<Logger>();
-    //dependencies.instance.register(logger);
-    Service_Locator.register(logger);
+    Service_Dependency.register(logger);
 
     // 일반 C# 클래스는 삭제 여부를 확인할 수 없다. null 검사가 안된다.
     // 하지만 다시 유니티 컴포넌트의 변수로 가져오면 null 체크가 가능하다.
