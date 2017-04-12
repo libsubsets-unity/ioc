@@ -2,8 +2,8 @@
 
 namespace libunity.ioc {
   [AttributeUsage(AttributeTargets.Field)]
-  public class dependency_attribute : Attribute {
-    public dependency_attribute() {
+  public class dependency : Attribute {
+    public dependency() {
     }
   }
 }

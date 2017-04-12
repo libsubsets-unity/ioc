@@ -4,13 +4,12 @@ using System.Reflection;
 using UnityEngine;
 
 namespace libunity.ioc {
-  //public class dependencies : MonoBehaviour {
-  public class dependencies {
+  public class dependency_container {
     public void register(object dep) {
       instances.Add(dep.GetType(), dep);
     }
 
-    public void clear_all() {
+    public void clear() {
       instances.Clear();
     }
 
@@ -30,7 +29,7 @@ namespace libunity.ioc {
         BindingFlags.Public | BindingFlags.Instance);
 
       foreach (FieldInfo field in fields) {
-        if (Attribute.IsDefined(field, typeof(dependency_attribute))) {
+        if (Attribute.IsDefined(field, typeof(dependency))) {
           object dep = get(field.FieldType);
           if (dep != null && dep.GetType() == typeof(T))
             field.SetValue(instance, dep);
@@ -47,7 +46,7 @@ namespace libunity.ioc {
         BindingFlags.Public | BindingFlags.Instance);
 
       foreach (FieldInfo field in fields) {
-        if (Attribute.IsDefined(field, typeof(dependency_attribute))) {
+        if (Attribute.IsDefined(field, typeof(dependency))) {
           object dep = get(field.FieldType);
           if (dep != null)
             field.SetValue(instance, dep);
@@ -58,6 +57,11 @@ namespace libunity.ioc {
       }
     }
 
+    public T resolve<T>() {
+      object instance = get(typeof(T));
+      return instance == null ? default(T) : (T)instance;
+    }
+
     private object get(Type type) {
       if (instances.Contains(type))
         return instances[type];
@@ -65,16 +69,5 @@ namespace libunity.ioc {
     }
 
     private Hashtable instances = new Hashtable();
-
-    static dependencies _instance = null;
-
-    public static dependencies instance {
-      get {
-        if (_instance == null)
-          //_instance = (new GameObject("dependencies")).AddComponent<dependencies>();
-          _instance = new dependencies();
-        return _instance;
-      }
-    }
   }
 }

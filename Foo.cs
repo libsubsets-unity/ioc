@@ -2,8 +2,9 @@
 using libunity.ioc;
 
 public class Foo : MonoBehaviour {
-  public void Awake() {
-    Service_Dependency.injection(this);
+  public void Start() {
+    this.inject();
+    //logger = this.resolve<Logger>();
   }
 
   void Update () {
@@ -12,5 +13,7 @@ public class Foo : MonoBehaviour {
   }
 
   [Inject]
-  private Logger logger = null;
+  private Logger logger;
+  [Inject]
+  private Camera camera;
 }

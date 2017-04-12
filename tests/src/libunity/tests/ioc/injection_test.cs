@@ -12,27 +12,28 @@ namespace libunity.tests.ioc {
         return service;
       }
 
-      [dependency_attribute]
+      [dependency]
       private service service = null;
     }
 
     public void test_injection() {
       test_object obj = new test_object();
       assert_true(obj.get_service() == null);
-      depend.injection(obj);
+      container.injection(obj);
       assert_false(obj.get_service() == null);
     }
 
     override protected void set_up() {
       service service = new service();
-      depend.register(service);
+      container = new dependency_container();
+      container.register(service);
     }
 
     override protected void tear_down() {
-      depend.clear_all();
+      container.clear();
     }
 
-    private dependencies depend = new dependencies();
+    private dependency_container container;
 
     override public List<test_case> get_tests() {
       List<test_case> result = new List<test_case>();
