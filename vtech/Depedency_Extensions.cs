@@ -2,21 +2,21 @@
 using libunity.ioc;
 
 public static class Dependency_Extensions {
-  private static dependency_container injector = null;
+  private static dependency_container container = null;
 
-  public static void set_container(dependency_container container) {
-    injector = container;
+  public static void set_container(dependency_container instance) {
+    container = instance;
   }
 
   public static void register(this object that, object instance) {
-    injector.register(instance);
+    container.register(instance);
   }
 
   public static void inject(this object that) {
-    injector.injection(that);
+    container.inject(that);
   }
 
   public static T resolve<T>(this object that) {
-    return injector.resolve<T>();
+    return container.resolve<T>();
   }
 }

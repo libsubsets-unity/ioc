@@ -8,7 +8,7 @@ public class Bootstrapper : MonoBehaviour {
     configure(container);
   }
 
-  private void configure(dependency_container container) {
+  private void configure(ioc_container_base container) {
     container.register(new GameObject("/logger").AddComponent<Logger>());
     container.register(GameObject.FindObjectOfType<Camera>());
   }

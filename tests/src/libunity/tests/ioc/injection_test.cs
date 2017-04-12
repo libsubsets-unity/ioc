@@ -19,7 +19,7 @@ namespace libunity.tests.ioc {
     public void test_injection() {
       test_object obj = new test_object();
       assert_true(obj.get_service() == null);
-      container.injection(obj);
+      container.inject(obj);
       assert_false(obj.get_service() == null);
     }
 
@@ -30,7 +30,6 @@ namespace libunity.tests.ioc {
     }
 
     override protected void tear_down() {
-      container.clear();
     }
 
     private dependency_container container;
