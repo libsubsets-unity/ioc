@@ -8,10 +8,6 @@ public static class Dependency_Extensions {
     container = instance;
   }
 
-  public static void register(this object that, object instance) {
-    container.register(instance);
-  }
-
   public static void inject(this object that) {
     container.inject(that);
   }

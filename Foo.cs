@@ -4,7 +4,6 @@ using libunity.ioc;
 public class Foo : MonoBehaviour {
   public void Start() {
     this.inject();
-    //logger = this.resolve<Logger>();
   }
 
   void Update () {
@@ -16,4 +15,6 @@ public class Foo : MonoBehaviour {
   private Logger logger;
   [Inject]
   private Camera camera;
+  [Inject]
+  private Dependency_Containor container;
 }

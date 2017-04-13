@@ -4,29 +4,28 @@ using libunity.ioc;
 
 namespace libunity.tests.ioc {
   class injection_test: test_case {
-    class service {
+    class test_service {
     }
 
     class test_object {
-      public service get_service() {
-        return service;
+      public bool is_injected() {
+        return service != null ? true : false;
       }
 
       [dependency]
-      private service service = null;
+      private test_service service = null;
     }
 
     public void test_injection() {
       test_object obj = new test_object();
-      assert_true(obj.get_service() == null);
+      assert_false(obj.is_injected());
       container.inject(obj);
-      assert_false(obj.get_service() == null);
+      assert_true(obj.is_injected());
     }
 
     override protected void set_up() {
-      service service = new service();
       container = new dependency_container();
-      container.register(service);
+      container.register(new test_service());
     }
 
     override protected void tear_down() {
