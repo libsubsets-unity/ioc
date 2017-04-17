@@ -24,14 +24,14 @@ namespace libunity.tests.ioc {
     }
 
     override protected void set_up() {
-      container = new dependency_container();
+      container = new dependency_container<dependency>();
       container.register(new test_service());
     }
 
     override protected void tear_down() {
     }
 
-    private dependency_container container;
+    private dependency_container<dependency> container;
 
     override public List<test_case> get_tests() {
       List<test_case> result = new List<test_case>();

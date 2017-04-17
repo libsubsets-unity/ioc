@@ -11,8 +11,8 @@ namespace libunity.ioc {
    * \brief dependency injection conatiner system class
    * \author Lee, Hyeon-gi
    */
-  public class dependency_container : ioc_container_base, service_locator_base,
-    dependency_injector_base {
+  public class dependency_container<T> : ioc_container_base, service_locator_base,
+    dependency_injector_base where T : Attribute {
     
     /** 
      *  Register dependency instance
@@ -45,7 +45,7 @@ namespace libunity.ioc {
         BindingFlags.Public | BindingFlags.Instance);
 
       foreach (FieldInfo field in fields) {
-        if (Attribute.IsDefined(field, typeof(dependency))) {
+        if (Attribute.IsDefined(field, typeof(T))) {
           object dependency = resolve(field.FieldType);
           if (dependency != null) {
             field.SetValue(instance, dependency);
@@ -63,8 +63,8 @@ namespace libunity.ioc {
      * 
      * \return service instance
      */
-    public T resolve<T>() {
-      return (T)resolve(typeof(T));
+    public U resolve<U>() {
+      return (U)resolve(typeof(U));
     }
 
     /** 
