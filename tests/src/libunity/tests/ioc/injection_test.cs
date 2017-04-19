@@ -1,42 +1,36 @@
 ﻿using System.Collections.Generic;
 using LibUnity.Test;
-using libunity.ioc;
+using LibUnity.IOC;
 
-namespace LibUnity.Tests.ioc {
-  class injection_test: test_case {
-    class test_service {
+namespace LibUnity.Tests.IOC {
+  class InjectionTest: TestCase {
+    class TestSerivce {
     }
 
-    class test_object {
+    class TestObject {
       public bool is_injected() {
         return service != null ? true : false;
       }
 
-      [dependency]
-      private test_service service = null;
+      [Dependency]
+      private TestSerivce service = null;
     }
 
     public void test_injection() {
-      test_object obj = new test_object();
-      assert_false(obj.is_injected());
-      container.inject(obj);
-      assert_true(obj.is_injected());
+      TestObject obj = new TestObject();
+      AssertFalse(obj.is_injected());
+      container.Inject(obj);
+      AssertTrue(obj.is_injected());
     }
 
-    override protected void set_up() {
-      container = new dependency_container<dependency>();
-      container.register(new test_service());
+    override protected void SetUp() {
+      container = new DependencyContainer<Dependency>();
+      container.Register(new TestSerivce());
     }
 
-    override protected void tear_down() {
+    override protected void TearDown() {
     }
 
-    private dependency_container<dependency> container;
-
-    override public List<test_case> get_tests() {
-      List<test_case> result = new List<test_case>();
-      result.Add(create_test_case(typeof(injection_test), "test_injection"));
-      return result;
-    }
+    private DependencyContainer<Dependency> container;
   }
 }

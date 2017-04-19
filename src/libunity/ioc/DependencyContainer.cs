@@ -3,23 +3,23 @@ using System.Collections;
 using System.Reflection;
 using UnityEngine;
 
-namespace libunity.ioc {
+namespace LibUnity.IOC {
   
   /* 
-   * \class dependency_container
+   * \class DependencyContainer
    *    
    * \brief dependency injection conatiner system class
    * \author Lee, Hyeon-gi
    */
-  public class dependency_container<T> : ioc_container_base, service_locator_base,
-    dependency_injector_base where T : Attribute {
+  public class DependencyContainer<T> : IOCContainerBase, ServiceLocatorBase,
+    DependencyInjectorBase where T : Attribute {
     
     /** 
      *  Register dependency instance
      *  
      *  \param dep instance
      */
-    public void register(object dep) {
+    public void Register(object dep) {
       instances.Add(dep.GetType(), dep);
     }
     
@@ -28,9 +28,9 @@ namespace libunity.ioc {
      * 
      * \param go target injection instance
      */
-    public void inject(GameObject go) {
+    public void Inject(GameObject go) {
       foreach (var component in go.GetComponents<MonoBehaviour>()) {
-        inject(component);
+        Inject(component);
       }
     }
     
@@ -39,14 +39,14 @@ namespace libunity.ioc {
      * 
      * \param instance injection instance
      */
-    public void inject(object instance) {
+    public void Inject(object instance) {
       Type type = instance.GetType();
       FieldInfo[] fields = type.GetFields(BindingFlags.NonPublic |
         BindingFlags.Public | BindingFlags.Instance);
 
       foreach (FieldInfo field in fields) {
         if (Attribute.IsDefined(field, typeof(T))) {
-          object dependency = resolve(field.FieldType);
+          object dependency = Resolve(field.FieldType);
           if (dependency != null) {
             field.SetValue(instance, dependency);
           }
@@ -63,8 +63,8 @@ namespace libunity.ioc {
      * 
      * \return service instance
      */
-    public U resolve<U>() {
-      return (U)resolve(typeof(U));
+    public U Resolve<U>() {
+      return (U)Resolve(typeof(U));
     }
 
     /** 
@@ -72,7 +72,7 @@ namespace libunity.ioc {
      * 
      * \return service instance
      */
-    public object resolve(Type type) {
+    public object Resolve(Type type) {
       return instances.Contains(type) ? instances[type] : null;
     }
 
