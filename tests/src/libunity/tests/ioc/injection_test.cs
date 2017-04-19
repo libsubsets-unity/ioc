@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using libunity.test;
+using LibUnity.Test;
 using libunity.ioc;
 
-namespace libunity.tests.ioc {
+namespace LibUnity.Tests.ioc {
   class injection_test: test_case {
     class test_service {
     }
