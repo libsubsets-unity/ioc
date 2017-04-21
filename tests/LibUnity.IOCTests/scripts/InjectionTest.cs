@@ -2,7 +2,7 @@
 using LibUnity.Test;
 using LibUnity.IOC;
 
-namespace LibUnity.Tests.IOC {
+namespace LibUnity.IOCTests {
   class InjectionTest: TestCase {
     class TestSerivce {
     }
@@ -16,7 +16,8 @@ namespace LibUnity.Tests.IOC {
       private TestSerivce service = null;
     }
 
-    public void test_injection() {
+    [TestMethod]
+    public void TestInjection() {
       TestObject obj = new TestObject();
       AssertFalse(obj.is_injected());
       container.Inject(obj);
