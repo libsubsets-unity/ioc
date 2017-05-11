@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using LibUnity.Test;
+using LibUnity.UnitTest;
 using LibUnity.IOC;
 
 namespace LibUnity.IOCTests {
