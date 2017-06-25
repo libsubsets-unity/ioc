@@ -11,8 +11,7 @@ namespace LibUnity.IOC {
    * \brief dependency injection conatiner system class
    * \author Lee, Hyeon-gi
    */
-  public class DependencyContainer<T> : IOCContainerBase, ServiceLocatorBase,
-    DependencyInjectorBase where T : Attribute {
+  public class DependencyContainer<T> : IOCContainerBase, ServiceLocatorBase, DependencyInjectorBase where T : Attribute {
     
     /** 
      *  Register dependency instance
@@ -41,8 +40,7 @@ namespace LibUnity.IOC {
      */
     public void Inject(object instance) {
       Type type = instance.GetType();
-      FieldInfo[] fields = type.GetFields(BindingFlags.NonPublic |
-        BindingFlags.Public | BindingFlags.Instance);
+      FieldInfo[] fields = type.GetFields(BindingFlags.NonPublic | BindingFlags.Public | BindingFlags.Instance);
 
       foreach (FieldInfo field in fields) {
         if (Attribute.IsDefined(field, typeof(T))) {
