@@ -49,8 +49,7 @@ namespace LibUnity.IOC {
             field.SetValue(instance, dependency);
           }
           else {
-            throw new Exception(type.FullName + " Can't find dependeny " +
-              field.FieldType.FullName);
+            throw new Exception(type.FullName + " Can't find dependeny " + field.FieldType.FullName);
           }
         }
       }
