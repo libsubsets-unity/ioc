@@ -1,0 +1,17 @@
+{
+    "name": "LibUnity.IOCTests",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b90692c599aaea346bf4e7ad2bb6deed",
+        "GUID:d3143601704a03b4b9fba19c5c03c155"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

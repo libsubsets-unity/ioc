@@ -1,0 +1,16 @@
+{
+  "name": "com.maayalee.libunity-ioc",
+  "version": "1.0.0",
+  "displayName": "libunity-ioc",
+  "unity": "2019.4",
+  "unityRelease": "21f1",
+  "keywords": [],
+  "author": {
+    "name": "Lee, Hyeon-gi",
+    "email": "maaya.lee@gmail.com",
+    "url": ""
+  },
+  "type": "library",
+  "dependencies": {
+  }
+}
