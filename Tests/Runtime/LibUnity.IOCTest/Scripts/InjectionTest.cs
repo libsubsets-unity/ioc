@@ -2,7 +2,7 @@
 using LibUnity.UnitTest;
 using LibUnity.IOC;
 
-namespace LibUnity.IOCTests {
+namespace LibUnity.IOCTest {
   class InjectionTest: TestCase {
     class TestSerivce {
     }
