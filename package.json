@@ -12,5 +12,6 @@
   },
   "type": "library",
   "dependencies": {
+    "com.maayalee.libunity-unitest": "https://github.com/maayalee/libunity-unittest.git#1.0.0"
   }
 }
