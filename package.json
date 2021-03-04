@@ -10,8 +10,8 @@
     "email": "maaya.lee@gmail.com",
     "url": ""
   },
-  "type": "library",
   "dependencies": {
-    "com.maayalee.libunity-unitest": "1.0.0"
-  }
+    "com.maayalee.libunity-unitest": "1.0.1"
+  },
+  "type": "library"
 }
