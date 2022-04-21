@@ -1,0 +1,16 @@
+{
+    "name": "LibUnity.IOC",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d3143601704a03b4b9fba19c5c03c155"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
