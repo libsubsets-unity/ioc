@@ -1,7 +1,7 @@
 {
-  "name": "com.maayalee.libsubsets-unity-ioc",
+  "name": "com.libsubsets.unity.ioc",
   "version": "1.0.0",
-  "displayName": "Subsets IOC",
+  "displayName": "Library Subsets IoC",
   "unity": "2019.4",
   "unityRelease": "21f1",
   "keywords": [
@@ -13,8 +13,8 @@
     "url": ""
   },
   "dependencies": {
-    "com.maayalee.libsubsets-unity-unitest": "1.0.1"
+    "com.libsubsets.unity.unittest": "1.0.1"
   },
   "type": "library",
-  "description": "ss"
+  "description": "Inversion of Control"
 }

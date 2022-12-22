@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace LibUnity.IOC {
+namespace LibSubsets.IoC {
   public interface DependencyInjectorBase {
     void Inject(object instance);
     void Inject(GameObject go);

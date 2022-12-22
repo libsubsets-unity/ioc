@@ -1,13 +1,10 @@
 {
-    "name": "LibUnity.IOC",
+    "name": "LibSubsets.IoC",
     "rootNamespace": "",
     "references": [
         "GUID:d3143601704a03b4b9fba19c5c03c155"
     ],
-    "includePlatforms": [
-        "Android",
-        "Editor"
-    ],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LibUnity.IOC {
+namespace LibSubsets.IoC {
   public interface ServiceLocatorBase {
     T Resolve<T>();
     object Resolve(Type type);

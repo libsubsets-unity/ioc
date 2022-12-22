@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using LibUnity.UnitTest;
-using LibUnity.IOC;
+using LibSubsets.UnitTest;
+using LibSubsets.IoC;
 
-namespace LibUnity.IOCTest {
+namespace LibSubsets.IoC.Test {
   class InjectionTest: TestCase {
     class TestSerivce {
     }

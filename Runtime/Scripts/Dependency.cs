@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LibUnity.IOC {
+namespace LibSubsets.IoC {
   [AttributeUsage(AttributeTargets.Field)]
   public class Dependency : Attribute {
     public Dependency() {

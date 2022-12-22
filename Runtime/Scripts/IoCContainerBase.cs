@@ -1,4 +1,4 @@
-﻿namespace LibUnity.IOC {
+﻿namespace LibSubsets.IoC {
   public interface IOCContainerBase {
     void Register(object instance);
   }

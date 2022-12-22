@@ -3,7 +3,7 @@ using System.Collections;
 using System.Reflection;
 using UnityEngine;
 
-namespace LibUnity.IOC {
+namespace LibSubsets.IoC {
   
   /* 
    * \class DependencyContainer

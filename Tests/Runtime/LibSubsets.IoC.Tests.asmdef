@@ -1,6 +1,5 @@
 {
-    "name": "LibUnity.IOCTests",
-    "rootNamespace": "",
+    "name": "LibSubsets.IoC.Tests",
     "references": [
         "GUID:b90692c599aaea346bf4e7ad2bb6deed",
         "GUID:d3143601704a03b4b9fba19c5c03c155"
